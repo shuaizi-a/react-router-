@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Index from './Pages/Index'
+import Video from './Pages/Video'
+import Workplace from './Pages/Workplace'
+import './index.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+      <div className='mainDiv'>
+        <div className='leftNav'>
+          <ul>
+            <li><Link to='/'>博客导航</Link></li>
+            <li><Link to='/video/'>视频教程</Link></li>
+            <li><Link to='/workplace/'>职场技能</Link></li>
+          </ul>
+        </div>
 
-export default App;
+        <div className='rightMain'>
+        <Route path='/' exact component={Index} />
+        <Route path='/video/' component={Video} />
+        <Route path='/workplace/' component={Workplace} />
+        </div>
+      </div>
+    </Router>
+  )
+}
+export default App

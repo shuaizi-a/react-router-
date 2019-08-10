@@ -1,0 +1,23 @@
+.topNav{
+  height:50px ;
+  background-color: #cfdefd;
+}
+.topNav ul{
+ display: flex; 
+ margin: 0px;
+ padding: 0px;
+}
+.topNav ul li{
+ padding: 10px;
+ text-align: center;
+ list-style: none;
+}
+
+.topNav ul li a{
+  text-decoration: none;
+  color: #333;
+}
+
+.videoContent{
+   padding:20px;
+}
